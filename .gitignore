@@ -10,3 +10,18 @@ sfml-widgets-demo
 # Code::Blocks
 sfml-widgets.layout
 sfml-widgets.depend
+
+# Ignore CI build directory
+build/
+builddir/
+build-debug/
+
+# Visual Studio files
+Win32-Debug/
+Win32-Release/
+x64-Debug/
+x64-Release/
+
+# VSCode files
+.cache/
+.v

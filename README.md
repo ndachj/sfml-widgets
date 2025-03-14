@@ -1,26 +1,57 @@
-SFML Widgets
-============
-
-A simple GUI module for SFML.
-
-- Spritesheet based: a single image file to customize widget style
-- Simple events: set a `std::function<void(void)>` callback on widgets to trigger functions on UI events.
-- Layouts: automatically align content without computing positions
+# SFML Widgets
 
 ![workflow](https://github.com/abodelot/sfml-widgets/actions/workflows/ci.yml/badge.svg)
 
-- Author: Alexandre Bodelot <alexandre.bodelot@gmail.com>
-- License: [MIT License](http://opensource.org/licenses/MIT) (See LICENSE file)
+A simple GUI module for SFML.
 
-Run `make` to build the library (`lib/libsfml-widgets.a`) and the demo program.
+- **Spritesheet based**: a single image file to customize widget style
+- **Simple events**: set a `std::function<void(void)>` callback on widgets to trigger
+functions on UI events.
+- **Layouts**: automatically align content without computing positions
 
-You can then run the demo: `./sfml-widgets-demo`
+**Original Author**: Alexandre Bodelot <alexandre.bodelot@gmail.com>
+
+**License**: [MIT License](http://opensource.org/licenses/MIT) (See `LICENSE` file)
+
+## Prerequisites
+
+- [SFML](https://www.sfml-dev.org/download.php) (version >= 2.5.0)
+- Meson or GNU make
+- C++ Compiler
+
+## Getting Started
+
+- **Meson (Subproject Integration)**
+
+    ```python
+    # Clone sfml-widgets repository into the project’s subprojects directory 
+    git clone https://github.com/ndachj/sfml-widgets.git PROJECT_ROOT/subprojects/sfml-widgets
+
+    # In project meson.build
+    sfml_widgets_dep = subproject('sfml-widgets').get_variable('sfml_widgets_dep')
+
+    executable(
+      'my_game.exe',                                        # executable
+      'main.cc',                                            # project source file
+      include_directories: include_directories('include'),  # project headers
+      dependencies: sfml_widgets_dep     # Link sfml-widgets as a dependency
+    )
+    ```
+
+- **GNU Make (Alternative Method)**
+
+    Run `make` to build the library `lib/libsfml-widgets.a` and the demo program.
+
+    You can then run the demo: `./sfml-widgets-demo`
 
 ## Setup
 
 1. Load resources (font, spritesheet) in static class `gui::Theme`
-2. Use `gui::Menu` to create a new sfml-widgets menu. It needs to be connected to your SFML render window, which is given to the constructor.
-3. Create widgets, add theme to the menu and define callbacks on them. NOTE: widgets must be dynamically allocated (`new`). The `gui::Menu` destructor will take care of deallocating widgets.
+2. Use `gui::Menu` to create a new sfml-widgets menu. It needs to be connected
+to your SFML render window, which is given to the constructor.
+3. Create widgets, add theme to the menu and define callbacks on them.
+NOTE: widgets must be dynamically allocated (`new`). The `gui::Menu` destructor
+will take care of deallocating widgets.
 
 Minimal example:
 
