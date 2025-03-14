@@ -1,7 +1,7 @@
 #ifndef GUI_LAYOUT_HPP
 #define GUI_LAYOUT_HPP
 
-#include "../Widget.hpp"
+#include "Gui/Widget.hpp"
 
 namespace gui
 {

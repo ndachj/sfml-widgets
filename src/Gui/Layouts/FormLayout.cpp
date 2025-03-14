@@ -1,6 +1,6 @@
 #include "FormLayout.hpp"
-#include "../Theme.hpp"
-#include "../Label.hpp"
+#include "Gui/Theme.hpp"
+#include "Gui/Label.hpp"
 
 namespace gui
 {

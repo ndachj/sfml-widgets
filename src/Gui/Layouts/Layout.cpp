@@ -2,8 +2,8 @@
 #include "FormLayout.hpp"
 #include "HBoxLayout.hpp"
 #include "VBoxLayout.hpp"
-#include "../Button.hpp"
-#include "../Label.hpp"
+#include "Gui/Button.hpp"
+#include "Gui/Label.hpp"
 
 namespace gui
 {

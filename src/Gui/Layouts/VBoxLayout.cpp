@@ -1,5 +1,5 @@
 #include "VBoxLayout.hpp"
-#include "../Theme.hpp"
+#include "Gui/Theme.hpp"
 
 namespace gui
 {

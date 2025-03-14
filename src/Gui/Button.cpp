@@ -59,7 +59,7 @@ void Button::onMouseMoved(float x, float y)
 }
 
 
-void Button::onMousePressed(float x, float y)
+void Button::onMousePressed(float, float)
 {
     m_box.press();
 }
